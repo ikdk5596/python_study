@@ -14,6 +14,8 @@ day5=$(date -d '4 day' +%m-%d)
 
 folder_name=$pre1\to$pre6
 
+echo "updating..."
+
 if [ $day == "월요일" ]; then
 if [ "$(ls thisweek | grep $day1)" != "$day1" ]; then
 	mkdir previous/$folder_name
