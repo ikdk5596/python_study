@@ -3,7 +3,7 @@
 벌금은 Movic Lab에 따로 저금통 설치 예정  
 
 Linux에서 git을 이용하는 것을 권장
-Code 형식 : $USER_$today.py
+Code 형식 : $USER_$today.py  
 Code 이름 예시 ) sanghong_10-31.py  
 
 벌금 : 1일 1천원 (자진해서 넣어주시길 바랍니다.)  
