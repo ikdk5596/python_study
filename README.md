@@ -14,5 +14,5 @@ Code 이름 예시 ) sanghong_10-31.py
 작성일 : 2018-10-31 오후 18:33분
 
 # 2018-10-31 업데이트 내용
-매주 월요일 bash newweek.sh를 통해 thisweek에 있던 파일을 previous로 보내줌  
-push_origin2master.sh는 자동으로 pull, add, commit, push를 진행  
+newweek.sh생성, 월요일에만 실행됨, thisweek에 있던 파일을 previous로 보내줌  
+push_origin2master.sh생성, 자동으로 pull, add, commit, push를 진행  
