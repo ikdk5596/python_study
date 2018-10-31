@@ -33,3 +33,5 @@ if [ "$(ls thisweek | grep $day1)" != "$day1" ]; then
 	git push origin master
 fi
 fi
+
+
