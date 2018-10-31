@@ -35,7 +35,7 @@ if [ "$(ls thisweek | grep $day1)" != "$day1" ]; then
 	done
 
 
-	git add thisweek/*
+	git add --all thisweek/*
 	git commit -m "automatically generated"
 	git push origin master
 fi
