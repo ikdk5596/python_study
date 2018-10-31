@@ -2,7 +2,7 @@
 매일 4장씩 보고 코드를 올릴 것  
 벌금은 Movic Lab에 따로 저금통 설치 예정  
 
-Linux에서 git을 이용하는 것을 권장
+Linux에서 git을 이용하는 것을 권장  
 Code 형식 : $USER_$today.py  
 Code 이름 예시 ) sanghong_10-31.py  
 
