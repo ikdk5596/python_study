@@ -8,6 +8,7 @@
 본 Repo는 https://github.com/kibitzing/FluentPython 의 kibitzing의 아이디어를 참고하였음을 알려드립니다.
 
 작성자 : 김상홍
+
 작성일 : 2018-10-31 오후 18:33분
 
 # 2018-10-31 업데이트 내용
