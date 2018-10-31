@@ -14,24 +14,26 @@ day5=$(date -d '4 day' +%m-%d)
 
 folder_name=$pre1\to$pre6
 
-if [ $day == "수요일" ]; then
+if [ $day == "월요일" ]; then
 if [ "$(ls thisweek | grep $day1)" != "$day1" ]; then
 	mkdir previous/$folder_name
 	mv thisweek/* previous/$folder_name
 
 	for pres in $pre1 $pre2 $pre3 $pre4 $pre5
 	do
-		git add previous/$folder_name/$pres
+		echo "" > previous/$folder_name/$pres/.init
+		git add previous/$folder_name/$pres/.init
 	done
 
 
 	for dayz in $day1 $day2 $day3 $day4 $day5
 	do
 		mkdir thisweek/$dayz
-		git add thisweek/$dayz
+		echo "" > thisweek/$dayz/.init
+		git add thisweek/$dayz/.init
 	done
 
-	git commit -m "automatically created"
+	git commit -m "automatically generated"
 	git push origin master
 fi
 fi
