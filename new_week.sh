@@ -19,18 +19,20 @@ if [ "$(ls thisweek | grep $day1)" != "$day1" ]; then
 	mkdir previous/$folder_name
 	mv thisweek/* previous/$folder_name
 
-	for pres in $pre1 $pre2 $pre3 $pre4 $pre5
-	do
-		echo "" > previous/$folder_name/$pres/.init
-		git add previous/$folder_name/$pres/.init
-	done
+
+	git add previous/*
+#	for pres in $pre1 $pre2 $pre3 $pre4 $pre5
+#	do
+#		echo "" > previous/$folder_name/$pres/.init
+#		git add previous/$folder_name/$pres/.init
+#	done
 
 
 	for dayz in $day1 $day2 $day3 $day4 $day5
 	do
 		mkdir thisweek/$dayz
 		echo "" > thisweek/$dayz/.init
-		git add thisweek/$dayz/.init
+		git add thisweek/*
 	done
 
 	git commit -m "automatically generated"
