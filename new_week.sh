@@ -1,5 +1,6 @@
 #/bin/sh
 day=$(date +%A)
+if [ $day == "월요일" ]; then
 pre1=$(date -d '7 day ago' +%m-%d)
 pre2=$(date -d '6 day ago' +%m-%d)
 pre3=$(date -d '5 day ago' +%m-%d)
@@ -11,12 +12,40 @@ day2=$(date -d '1 day' +%m-%d)
 day3=$(date -d '2 day' +%m-%d)
 day4=$(date -d '3 day' +%m-%d)
 day5=$(date -d '4 day' +%m-%d)
+fi
+if [ $day == "일요일" ]; then
+pre1=$(date -d '6 day ago' +%m-%d)
+pre2=$(date -d '5 day ago' +%m-%d)
+pre3=$(date -d '4 day ago' +%m-%d)
+pre4=$(date -d '3 day ago' +%m-%d)
+pre5=$(date -d '2 day ago' +%m-%d)
+pre6=$(date -d '2 day ago' +%d)
+day1=$(date -d '1 day' +%m-%d)
+day2=$(date -d '2 day' +%m-%d)
+day3=$(date -d '3 day' +%m-%d)
+day4=$(date -d '4 day' +%m-%d)
+day5=$(date -d '5 day' +%m-%d)
+fi
+if [ $day == "월요일" ]; then
+pre1=$(date -d '5 day ago' +%m-%d)
+pre2=$(date -d '4 day ago' +%m-%d)
+pre3=$(date -d '3 day ago' +%m-%d)
+pre4=$(date -d '2 day ago' +%m-%d)
+pre5=$(date -d '1 day ago' +%m-%d)
+pre6=$(date -d '1 day ago' +%d)
+day1=$(date -d '2 day' +%m-%d)
+day2=$(date -d '3 day' +%m-%d)
+day3=$(date -d '4 day' +%m-%d)
+day4=$(date -d '5 day' +%m-%d)
+day5=$(date -d '6 day' +%m-%d)
+fi
 
 folder_name=$pre1\to$pre6
 
 echo "updating..."
 
-if [ $day == "월요일" ]; then
+git pull
+
 if [ "$(ls thisweek | grep $day1)" != "$day1" ]; then
 	mkdir previous/$folder_name
 	mv thisweek/* previous/$folder_name
@@ -27,13 +56,15 @@ if [ "$(ls thisweek | grep $day1)" != "$day1" ]; then
 	do
 		mkdir thisweek/$dayz
 		echo "" > thisweek/$dayz/.init
+		git add --all thisweek/$dayz
+	done
+	for prez in $pre2 $pre3 $pre4 $pre5 $pre6
+	do
+		git add --all thisweek/$prez/*
 	done
 
-
-	git add --all thisweek/*
 	git commit -m "automatically generated"
 	git push origin master
-fi
 fi
 
 
